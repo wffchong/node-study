@@ -37,6 +37,7 @@ app.use(express.json())
 app.use('/api/student', require('./api/student'))
 app.use('/api/admin', require('./api/admin'))
 app.use('/api/upload', require('./api/upload'))
+app.use('/api/download', require('./api/download'))
 
 // 处理错误的中间件
 app.use(require('./errorMiddleware'))

@@ -5,14 +5,16 @@
         <input type="text" name="b" v-model="valueB" />
         <input type="file" name="img" accept="image/*" multiple @change="handleUpload" />
         <img :src="imgSrc" alt="" />
-        <hr>
-        <hr>
+        <hr />
+        <h2>下载</h2>
+        <a :href="downloadSrc">下载</a>
+        <hr />
         <button @click="logout">退出登录</button>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import useRooterStore from '../store'
 import { upload } from '../service/upload'
 const rootStore = useRooterStore()
@@ -20,6 +22,11 @@ const rootStore = useRooterStore()
 const imgSrc = ref('')
 const valueA = ref('')
 const valueB = ref('')
+const downloadSrc = ref('../assets/vue.svg')
+
+onMounted(() => {
+    
+})
 
 const logout = () => {
     rootStore.setToken('')
